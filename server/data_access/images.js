@@ -1,7 +1,4 @@
-const mongoose = require('mongoose');
 const image_model = require('../api/models/image.js');
-
-const db = require('../db.js');
 
 var get_images = () => {
     return image_model.find().exec();
