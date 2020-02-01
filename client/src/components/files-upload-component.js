@@ -46,7 +46,7 @@ export default class FilesUploadComponent extends Component
                             <label class="custom-file-label col-form-label-sm" for="customFile">Choose file</label>
                         </div>
                         <div className="form-group">
-                            <button class="custom-file-input-width" class="background-1 btn btn-primary " type="submit">Upload</button>
+                            <button class="custom-file-input-width" class="background-1 btn btn-primary " type="submit">Get Recipes</button>
                         </div>
                     </form>
         )
