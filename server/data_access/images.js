@@ -4,10 +4,10 @@ var get_images = () => {
     return image_model.find().exec();
 }
 
-var insert_image = () => {
+var insert_image = (file) => {
     var image_instance = new image_model( 
         { 
-            filepath: 'banana.jpeg',
+            filepath: file.filename,
             objects: [1]
         });
 

@@ -10,8 +10,11 @@ const router = express.Router();
 router.use(bodyParser.json());
 
 router.post('/', upload.any(), (req, res) => {
-    images_data_access.insert_image();
-    res.send({ status: 'Uploading' });
+    req.files.forEach(file => {
+        images_data_access.insert_image(file);
+    });
+
+    res.send({ status: 'Uploaded files!' });
 });
 
 router.get('/', async (req, res) => {
