@@ -30,7 +30,7 @@ export default class FilesUploadComponent extends Component
         {
             formData.append('imgCollection', this.state.imgCollection[key])
         }
-        axios.post("http://localhost:4000/api/upload-images", formData, 
+        axios.post("http://localhost:34521/images/", formData, 
         {
         }).then(res => {
             console.log(res.data)
@@ -46,7 +46,7 @@ export default class FilesUploadComponent extends Component
                             <label class="custom-file-label col-form-label-sm" for="customFile">Choose file</label>
                         </div>
                         <div className="form-group">
-                            <button class="custom-file-input-width" class="background-1 btn btn-primary " type="submit">Get Recipes</button>
+                            <button class="background-1 btn btn-primary" type="submit">Get Recipes</button>
                         </div>
                     </form>
         )
