@@ -62,13 +62,13 @@ export default class FilesUploadComponent extends Component
         return (
                 <div>
                     <div class="background-2 shadow p-3 mb-5 rounded">
-                        <h1 class="title-text">Flexipe</h1>
-                        <h2>The flexible recipe generator!</h2>
+                        <h1 class="display-3 title-text">RecipEasy</h1>
+                        <h3>Eliminate food waste with this creative recipe search, based off of the ingredients you have!</h3>
                     
                         <form onSubmit={this.onSubmit}>
                             <div class="custom-file custom-padding-top custom-margin-top">
                                 <input type="file" class="custom-file-input form-control-sm" id="customFile" name="imgCollection" onChange={this.onFileChange} multiple />
-                                <label class="custom-file-label col-form-label-sm col-md-8 offset-md-2" for="customFile">Upload a picture of ingredients!</label>
+                                <label class="custom-file-label col-form-label-sm col-md-8 offset-md-2" for="customFile">Upload pictures of ingredients!</label>
                             </div>
                             <div className="form-group">
                                 <button class="btn btn-primary" type="submit">Get Recipes</button>
