@@ -2,12 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const multer = require('multer');
-const tf = require('@tensorflow/tfjs');
-const mobilenet = require('@tensorflow-models/mobilenet');
-const tfnode = require('@tensorflow/tfjs-node');
 const upload = multer( { dest: 'ai_uploads/' });
-
-const model = require('../../util/ai_model.js');
 
 const router = express.Router();
 
@@ -20,26 +15,31 @@ const readImage = path => {
 }
 
 const imageClassification = async path => {
-    const image = readImage(path);
-    const mobilenetModel = await mobilenet.load();
-    const predictions = await mobilenetModel.classify(image);
-    console.log('Classification Results:', predictions);
+    var spawn1 = require("child_process").spawn;
+    var process1 = spawn1('ls');
+    process1.stdout.on('data', function (data) {
+        console.log(data.toString());
+    })
+
+    var spawn = require("child_process").spawn;
+    var process = spawn('python', ["ai/inference.py", path, "ai/food_model.h5"]);
+    console.log(process);
+    process.stdout.on('data', function (data) {
+        console.log(data.toString());
+    })
+    process.stderr.on('data', function (data) {
+        console.log(data.toString());
+    })
 }
 
 router.post('/', upload.any(), async (req, res) => {
     console.log('hey bitch, im working');
     req.files.forEach(async (file) => {
-       imageClassification(file.path); 
+        console.log(file);
+        imageClassification(file.path); 
     });
         
     res.send({hello: 'world'});
-
-    // fs.readFile(req.body.filePath, async (err, data) => {
-    //     if (err) throw err;
-
-    //     var ai_model = await model.model();
-    //     res.send(await ai_model.classify(data));
-    // });
 });
 
 router.get('/', async (req, res) => {

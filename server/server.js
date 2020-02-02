@@ -1,16 +1,12 @@
 const http = require('http');
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
 
-const app = require('./app.js');
+const router = require('./api/routes/router.js');
+const app = express();
 
 app.use(bodyParser.json());
-app.use(cors({
-  origin: '*',
-  allowedHeaders: '*',
-  methods: 'PUT, POST, DELETE, GET',
-}));
+app.use('/', router);
 
 const server = http.createServer(app);
 
