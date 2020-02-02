@@ -10,17 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tensorflow-models/mobilenet": "^2.0.4",
-    "@tensorflow/tfjs": "1.5.1",
-    "@tensorflow/tfjs-node": "1.5.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-<<<<<<< HEAD
     "http": "0.0.0",
-=======
-    "jpeg-js": "^0.3.6",
->>>>>>> fcd0d1d39afb02d02e9674a478a5f3ee9c3481e6
     "mongoose": "^5.8.11",
     "multer": "^1.4.2",
     "nodemon": "^2.0.2"

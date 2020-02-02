@@ -22,6 +22,7 @@ var get_image_by_id = (id) => {
 }
 
 var insert_image = (file) => {
+    console.log("yo itz me");
     var img = fs.readFileSync(file.path);
     var encode_Image = img.toString('base64');
 
