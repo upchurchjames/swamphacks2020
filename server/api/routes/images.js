@@ -11,10 +11,11 @@ router.use(bodyParser.json());
 
 router.post('/', upload.any(), (req, res) => {
     req.files.forEach(file => {
+        console.log(file);
         images_data_access.insert_image(file);
     });
 
-    res.send({ status: 'Uploaded files!' });
+    res.redirect('/')
 });
 
 router.get('/', async (req, res) => {
@@ -22,5 +23,11 @@ router.get('/', async (req, res) => {
     console.log(results);
     res.json(results);
 });
+
+router.get('/:id', (req, res) => {
+    var img = images_data_access.get_image_by_id(req.params.id);
+    res.contentType('image/jpeg');
+    res.send(img.image.buffer);
+})
 
 module.exports = router;
