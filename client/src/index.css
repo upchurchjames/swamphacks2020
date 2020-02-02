@@ -14,6 +14,17 @@ code
     monospace;
 }
 
+.btn-primary
+{
+  background-color: #51a398 !important;
+  border-color: #51a398 !important;
+}
+
+.title-text 
+{
+  color: #1C2826;
+}
+
 .custom-margin-top
 {
 	margin-top: 5%;
@@ -26,12 +37,12 @@ code
 
 .background-1
 {
-	background-color: #2E4600;
+	/*background-color: #bed8d4;*/
 }
 
 .background-2
 {
-	background-color: #486B00;
+	background-color: #bed8d4;
 }
 
 .background-3

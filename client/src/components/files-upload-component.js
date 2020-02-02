@@ -43,10 +43,10 @@ export default class FilesUploadComponent extends Component
                     <form onSubmit={this.onSubmit}>
                         <div class="custom-file custom-padding-top custom-margin-top">
                             <input type="file" class="custom-file-input form-control-sm" id="customFile" name="imgCollection" onChange={this.onFileChange} multiple />
-                            <label class="custom-file-label col-form-label-sm" for="customFile">Choose file</label>
+                            <label class="custom-file-label col-form-label-sm col-md-8 offset-md-2" for="customFile">Upload a picture of ingredients!</label>
                         </div>
                         <div className="form-group">
-                            <button class="background-1 btn btn-primary" type="submit">Get Recipes</button>
+                            <button class="btn btn-primary" type="submit">Get Recipes</button>
                         </div>
                     </form>
         )
