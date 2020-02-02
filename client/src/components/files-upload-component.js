@@ -31,14 +31,27 @@ export default class FilesUploadComponent extends Component
         e.preventDefault()
 
         var formData = new FormData();
+
+        var url = "http://localhost:34521/images/";
+
         for (const key of Object.keys(this.state.imgCollection)) 
         {
-            formData.append('imgCollection', this.state.imgCollection[key])
+            formData.append('file', this.state.imgCollection[key], this.state.imgCollection[key].name);
         }
-        axios.post("http://localhost:34521/images/", formData, 
+
+        console.log(formData);
+
+        axios.post(url, formData, 
         {
+            headers: {
+                'accept': 'application/json',
+                'Accept-Language': 'en-US,en;q=0.8',
+                'Content-Type': `multipart/form-data; boundary=${formData._boundary}`,
+            }
         }).then(res => {
-            console.log(res.data)
+            console.log(res.data);
+        }).catch((err) => {
+            console.log(err);
         })
 
         this.setState({showResults: true});
